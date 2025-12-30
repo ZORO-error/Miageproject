@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Miage project</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<link rel="icon" type="image/png" href="/image/Logo-MIAGE-200x160.png">
+</head>
+<body>
+
+<header id="header">
+  <h2>MAIGE</h2>
+</header>
+
+<section>
+    <nav>
+      <ul class="sidenav">
+        <a href="home.html">Home</a>
+        <button class="dropdown-btn">Cours C++ 
+          <i class="fa fa-caret-down"></i>
+        </button>
+          <ul class="dropdown-container">
+            <button class="dropdown-btn">Chapitre 1 
+              <i class="fa fa-caret-down"></i>
+            </button>
+              <ul class="dropdown-container">
+                <a href="index.html">Introduction</a>
+                <a href="index1.html">Get Started</a>  
+              </ul>    
+          </ul> 
+      </ul>
+    </nav>
+  
+  <article >   
+    <h1 style="text-align: center;">FOR WHAT THIS WEBSITE ?</h1>
+    <p style="text-align: center; font-size: 20px;">This website is designed to provide comprehensive tutorials and resources for learning C++ programming.</p>  
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+<script>
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>
+
+</body>
+</html>
