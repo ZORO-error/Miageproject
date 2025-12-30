@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>Miage project</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" />
@@ -10,18 +10,28 @@
 </head>
 <body>
 
-<header>
+<header id="header">
   <h2>c++ cours</h2>
 </header>
 
 <section>
-  <nav>
-    <ul >
-      <li><a href="index.html">Introduction</a></li>
-      <li><a href="index1.html">printf</a></li>
-      <li><a href="#">Chapitre 3</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul class="sidenav">
+        <a href="home.html">Home</a>
+        <button class="dropdown-btn">Cours C++ 
+          <i class="fa fa-caret-down"></i>
+        </button>
+          <ul class="dropdown-container">
+            <button class="dropdown-btn">Chapitre 1 
+              <i class="fa fa-caret-down"></i>
+            </button>
+              <ul class="dropdown-container">
+                <a href="index.html">Introduction</a>
+                <a href="index1.html">Get Started</a>  
+              </ul>    
+          </ul> 
+      </ul>
+    </nav>
   
   <article>
     <h1>C++ Introduction</h1>
@@ -30,6 +40,7 @@
     <p>C++ was developed by Bjarne Stroustrup, as an extension to the C language.</p>
     <p> C++ gives programmers a high level of control over system resources and memory.</p>
     <p>The language was updated 5 major times in 2011, 2014, 2017, 2020, and 2023 to C++11, C++14, C++17, C++20, and C++23.</p>
+    <hr>
     <h2>Why Use C++</h2>
     <p>C++ is one of the world's most popular programming languages.</p>
     <p>C++ can be found in today's operating systems, Graphical User Interfaces, and embedded systems.</p>
@@ -37,6 +48,7 @@
     <p>C++ is portable and can be used to develop applications that can be adapted to multiple platforms.</p>
     <p>C++ is fun and easy to learn!</p>
     <p>As C++ is close to C, C# and Java, it makes it easy for programmers to switch to C++ or vice versa.</p>
+    <hr>
     <h2>Difference between C and C++</h2>
     <p>C++ was developed as an extension of C, and both languages have almost the same syntax.</p>
     <p>The main difference between C and C++ is that C++ supports classes and objects, while C does not.</p>
@@ -46,9 +58,26 @@
 <footer>
   <p>Footer</p>
 </footer>
+<script>
 
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>
 
 </body>
-
 </html>
+
 
